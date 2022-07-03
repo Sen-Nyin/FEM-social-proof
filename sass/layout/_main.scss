@@ -1,2 +1,178 @@
-@use '../abstracts'as a;
-@use '../base'as b;
+@use "../abstracts" as a;
+@use "../base" as b;
+
+.testimonials {
+  display: grid;
+  grid-template-areas: "head" "cards";
+  @include a.getclamp(gap, 4.9, 7.1, xs, lg);
+  @include a.getclamp(max-width, 32.7, 111, xs, lg);
+  padding: 8.2rem 2.4rem;
+
+  &__head {
+    width: 100%;
+    display: grid;
+    grid-template-areas: "text" "ratings";
+    @include a.getclamp(gap, 3.9, 12.5, xs, lg);
+
+    @include a.breakpoint(lg, min) {
+      grid-template-areas: "text ratings";
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &-text {
+      grid-area: text;
+      text-align: center;
+
+      @include a.breakpoint(lg, min) {
+        text-align: left;
+        width: 44.5rem;
+      }
+
+      &-header {
+        font-weight: var(--font-weight-bold);
+        @include a.getclamp(line-height, 3.2, 4.8, xs, lg);
+        @include a.getclamp(font-size, 4, 5.6, xs, lg);
+        color: var(--color-dark-magenta);
+        padding-bottom: 1.6rem;
+      }
+
+      &-description {
+        font-weight: var(--font-weight-normal-plus);
+        line-height: 2.5rem;
+        font-size: 1.9rem;
+        color: var(--color-dark-grey-magenta);
+      }
+    }
+  }
+
+  &__ratings {
+    grid-area: ratings;
+    display: grid;
+    grid-template-areas: "card1" "card2" "card3";
+    gap: 1.6rem;
+    border-radius: 0.8rem;
+
+    @include a.breakpoint(xl, min) {
+      width: 54rem;
+    }
+
+    &-card {
+      background-color: var(--color-light-grey-magenta);
+      @include a.getclamp(padding, 1.6, 2, xs, lg);
+      display: grid;
+      grid-template-areas: "stars" "text";
+      @include a.getclamp(gap, 1.5, 3.2, xs, lg);
+      justify-content: center;
+      justify-items: center;
+      border-radius: 0.8rem;
+      width: 100%;
+
+      @include a.breakpoint(lg, min) {
+        grid-template-areas: "stars text";
+        justify-content: start;
+        align-content: center;
+        padding-inline: 3.2rem;
+        width: 44.5rem;
+      }
+
+      &-1 {
+        grid-area: card1;
+        justify-self: start;
+      }
+      &-2 {
+        grid-area: card2;
+        justify-self: center;
+      }
+      &-3 {
+        grid-area: card3;
+        justify-self: end;
+      }
+    }
+    &-text {
+      font-size: 1.7rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-dark-magenta);
+    }
+  }
+
+  // cards
+
+  &__cards {
+    display: grid;
+    grid-template-areas: "card1" "card2" "card3";
+    @include a.getclamp(gap, 1.6, 3, xs, lg);
+
+          @include a.breakpoint(lg,min) {
+        grid-template-areas: "card1 card2 card3";
+        height: 26.6rem;
+          }
+
+    &-card {
+      background-color: var(--color-dark-magenta);
+      padding: 4rem 3.2rem 3.5rem 3.2rem;
+      border-radius: 0.8rem;
+      width: 100%;
+
+      @include a.breakpoint(lg,min) {
+        width: 35rem;
+        height: 23.4rem;
+      }
+
+      &-1 {
+        grid-area: card1;
+        align-self: start;
+      }
+
+      &-2 {
+        grid-area: card2;
+        align-self: center;
+      }
+
+      &-3 {
+        grid-area: card3;
+        align-self: end;
+      }
+    }
+
+    &-individual {
+      display: grid;
+      grid-template-areas:
+        "avatar name"
+        "avatar status";
+      grid-template-columns: repeat(2, max-content);
+      grid-template-rows: repeat(2, 2rem);
+      @include a.getclamp(margin-bottom, 2.4, 3.2, xs, lg);
+    }
+
+    &-avatar {
+      grid-area: avatar;
+      border-radius: 100%;
+      margin-right: 2.3rem;
+      width: 40px;
+      align-self: center;
+    }
+
+    &-name {
+      grid-area: name;
+      font-size: 1.7rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-white);
+      align-self: end;
+    }
+
+    &-status {
+      grid-area: status;
+      font-size: 1.7rem;
+      font-weight: var(--font-weight-normal);
+      color: var(--color-soft-pink);
+      align-self: start;
+    }
+
+    &-quote {
+      font-size: 1.7rem;
+      line-height: 2.2rem;
+      font-weight: var(--font-weight-normal-plus);
+      color: var(--color-white);
+    }
+  }
+}
