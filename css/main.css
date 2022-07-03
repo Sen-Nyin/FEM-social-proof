@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+*:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a,
+button {
+  cursor: revert;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+input,
+textarea {
+  -webkit-user-select: auto;
+  user-select: auto;
+}
+
+textarea {
+  white-space: revert;
+}
+
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+::placeholder {
+  color: unset;
+}
+
+:where([hidden]) {
+  display: none;
+}
+
+:where([contenteditable]:not([contenteditable=false])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  line-break: after-white-space;
+  -webkit-user-select: auto;
+  user-select: auto;
+}
+
+:where([draggable=true]) {
+  -webkit-user-drag: element;
+}
+
+:root {
+  font-size: 62.5%;
+  --color-dark-magenta: hsl(300, 43%, 22%);
+  --color-soft-pink: hsl(333, 80%, 67%);
+  --color-dark-grey-magenta: hsl(303, 10%, 53%);
+  --color-light-grey-magenta: hsl(300, 24%, 96%);
+  --color-white: hsl(0, 0%, 100%);
+  --font-default: "League Spartan", sans-serif;
+  --font-size-default: 1.5rem;
+  --font-weight-normal: 400;
+  --font-weight-normal-plus: 500;
+  --font-weight-bold: 700;
+}
+
+body {
+  font-family: var(--font-default);
+  font-size: var(--font-size-default);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}/*# sourceMappingURL=main.css.map */

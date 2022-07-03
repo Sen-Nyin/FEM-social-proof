@@ -1,0 +1,33 @@
+@use '../abstracts/' as a;
+
+:root {
+
+    // Default font size to 10px
+
+    font-size: 62.5%;
+
+    // COLORS
+
+    --color-dark-magenta: hsl(300, 43%, 22%);
+    --color-soft-pink: hsl(333, 80%, 67%);
+
+    --color-dark-grey-magenta: hsl(303, 10%, 53%);
+    --color-light-grey-magenta: hsl(300, 24%, 96%);
+    --color-white: hsl(0, 0%, 100%);
+
+    // TYPOGRAPHY
+
+    --font-default: 'League Spartan', sans-serif;
+    --font-size-default: 1.5rem;
+
+    --font-weight-normal: 400;
+    --font-weight-normal-plus: 500;
+    --font-weight-bold: 700;
+
+}
+
+body {
+    font-family: var(--font-default);
+    font-size: var(--font-size-default);
+    @include a.bodyCenter();
+}
